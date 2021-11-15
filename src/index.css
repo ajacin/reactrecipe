@@ -7,7 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.currency {
+  border: 1px solid red;
+  background-color: blanchedalmond;
+  margin: 5px;
+  padding: 5px;
+  min-width: 250px;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
