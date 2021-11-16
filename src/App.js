@@ -46,7 +46,7 @@ const App = () => {
         </div>
         <nav>
           <ul className="nav-links">
-            <li ><a href="#" class="nav-link">Recipes</a></li>
+            <li ><a href="#" class="nav-link selected-nav-item">Recipes</a></li>
             <li ><a href="#" class="nav-link">Nutrients</a></li>
             <li ><a href="#" class="nav-link">Food</a></li>
             <li ><a href="#" class="nav-link">Contact</a></li>
@@ -58,11 +58,13 @@ const App = () => {
       </header>
       <form onSubmit={submitForm} className="search-form">
         <input className="search-input" value={search} onChange={updateSearch} ></input>
-        <button className="search-button">Search Recipes</button>
+        <button className="search-button"><p>Search</p></button>
       </form>
+      <div className= "recipeContainer">
       {recipes.map((recipelistitem, index) => (
-        <Recipe title={recipelistitem.recipe.label} image={recipelistitem.recipe.image} key={index}></Recipe>
+        <Recipe title={recipelistitem.recipe.label} image={recipelistitem.recipe.image} key={index} meta ={recipelistitem.recipe}></Recipe>
       ))}
+      </div>
 
     </div>
   )

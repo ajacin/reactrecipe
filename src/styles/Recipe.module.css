@@ -1,0 +1,34 @@
+.recipe {
+    border:none;
+    background-color:whitesmoke;
+    width:400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    align-items: center;
+    /* box-shadow: 5px 5px #cccccc; */
+    filter: drop-shadow(0 0 0.25rem black);
+    margin-top: 15px;
+    
+}
+.quickinfo{
+    font-size: 12px;
+    color: slategray;
+    align-self: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.viewButton{
+color: rgb(133, 77, 77);
+background-color: transparent;
+border: 1px solid rgb(133, 77, 77);
+border-radius: 5px;
+padding: 3px;
+}

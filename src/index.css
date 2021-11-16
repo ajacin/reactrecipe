@@ -4,9 +4,12 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+button {
+  font-family: 'Poppins', sans-serif;
+}
 
 div,nav,header,.nav-link ,.nav-links {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .app{
@@ -46,6 +49,10 @@ nav {
   justify-content: center;
 
 }
+.selected-nav-item {
+  font-weight: bold;
+  color: cornflowerblue;
+}
 .nav-links {
   list-style: none;
   display: flex;
@@ -61,8 +68,61 @@ nav {
 .how-to {
   flex:1;
   justify-content: flex-end;
-  background-color: red;
   width:400px;
 }
 
+.recipeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.search-form {
+  align-self: center;
+  margin: 10px;
 
+}
+
+.search-form input {
+  height:50px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 1px solid grey;
+  width: 400px;
+  align-content: center;
+  padding: 3px;
+  font-size: 15px;
+  margin: 5px;
+  color: #5f5f79;
+}
+.search-form button {
+  height:50px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 1px solid grey;
+  align-content: center;
+  padding: 5px;
+  font-size: 15px;
+}
+
+@media screen and (max-width:600px){
+  .how-to {
+    display: none;
+  }
+  .recipeContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-form {
+    align-self: center;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  
+  }
+  nav{
+    display: none;
+  }
+}
