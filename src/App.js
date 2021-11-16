@@ -10,11 +10,12 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('Chicken');
   const [query, setQuery] = useState('');
+  const [resulthelptext, setResulthelptext] = useState('');
 
   useEffect(() => {
-    // fetchRecipes();
+    fetchRecipes();
     //temp for testing
-    setRecipes(Sample.hits)
+    // setRecipes(Sample.hits)
 
 
   }, [query]);
@@ -33,6 +34,8 @@ const App = () => {
   const submitForm = e => {
     e.preventDefault();
     setQuery(search);
+    setSearch('');
+    setResulthelptext({ search } === '' ? '' : `Showing results for ${search} recipes`)
   }
 
   return (
@@ -53,18 +56,22 @@ const App = () => {
           </ul>
         </nav>
         <div className="how-to">
-          <h3>How to use? </h3>
+          <h3>{resulthelptext}</h3>
+        </div>
+        <div className="nav-button">
+          <img src="./images/menu.svg" alt="menu"></img>
         </div>
       </header>
       <form onSubmit={submitForm} className="search-form">
         <input className="search-input" value={search} onChange={updateSearch} ></input>
         <button className="search-button"><p>Search</p></button>
       </form>
-      <div className= "recipeContainer">
-      {recipes.map((recipelistitem, index) => (
-        <Recipe title={recipelistitem.recipe.label} image={recipelistitem.recipe.image} key={index} meta ={recipelistitem.recipe}></Recipe>
-      ))}
-      </div>
+      {(recipes.length > 0) ? (<div className="recipeContainer">
+        {recipes.map((recipelistitem, index) => (
+          <Recipe title={recipelistitem.recipe.label} image={recipelistitem.recipe.image} key={index} meta={recipelistitem.recipe}></Recipe>
+        ))}
+      </div>) : <h4>No results matching your search</h4>}
+
 
     </div>
   )

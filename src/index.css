@@ -105,6 +105,10 @@ nav {
   font-size: 15px;
 }
 
+.nav-button {
+    display: none;
+}
+
 @media screen and (max-width:600px){
   .how-to {
     display: none;
@@ -124,5 +128,8 @@ nav {
   }
   nav{
     display: none;
+  }
+  .nav-button {
+    display: flex;
   }
 }

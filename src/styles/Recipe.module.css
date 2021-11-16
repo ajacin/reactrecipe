@@ -1,6 +1,6 @@
 .recipe {
     border:none;
-    background-color:whitesmoke;
+    background-color:white;
     width:400px;
     height: 500px;
     display: flex;
@@ -31,4 +31,5 @@ background-color: transparent;
 border: 1px solid rgb(133, 77, 77);
 border-radius: 5px;
 padding: 3px;
+margin: 5px;
 }
