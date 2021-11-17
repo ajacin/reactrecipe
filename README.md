@@ -1,2 +1,4 @@
 # reactrecipe
-A simple recipe app in React
+Recipe app implemented in React JS
+## Concepts
+States,CSS modules, APIs, hooks
