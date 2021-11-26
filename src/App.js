@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from './Recipe';
 import { Sample } from './sampleresponse';
+import CheckboxGroup from 'react-checkbox-group'
 
 const App = () => {
   const APPID = "8fbdabe1";
@@ -11,6 +12,7 @@ const App = () => {
   const [search, setSearch] = useState('Chicken');
   const [query, setQuery] = useState('');
   const [resulthelptext, setResulthelptext] = useState('');
+  const[isVeg,setIsVeg] =useState(false);
 
   useEffect(() => {
     fetchRecipes();
@@ -59,18 +61,40 @@ const App = () => {
           <h3>{resulthelptext}</h3>
         </div>
         <div className="nav-button">
-          <img src="./images/menu.svg" alt="menu"></img>
+          <img src="https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png" alt="menu"></img>
         </div>
       </header>
       <form onSubmit={submitForm} className="search-form">
         <input className="search-input" value={search} onChange={updateSearch} ></input>
         <button className="search-button"><p>Search</p></button>
+        {/* <div className="options-container">
+        <input
+          type="checkbox"
+          className="checkbox-is-veg"
+          name="checkbox-is-veg"
+          checked={isVeg}
+          onChange={()=>{
+            setIsVeg(!isVeg);
+          }}
+        />
+        <input
+          type="checkbox"
+          className="checkbox-is-veg"
+          name="checkbox-is-veg"
+          checked={isVeg}
+          onChange={()=>{
+            setIsVeg(!isVeg);
+          }}
+        />
+        </div> */}
+        
+        <p className="result-helptext-mobile" >{resulthelptext}</p>
       </form>
       {(recipes.length > 0) ? (<div className="recipeContainer">
         {recipes.map((recipelistitem, index) => (
           <Recipe title={recipelistitem.recipe.label} image={recipelistitem.recipe.image} key={index} meta={recipelistitem.recipe}></Recipe>
         ))}
-      </div>) : <h4>No results matching your search</h4>}
+      </div>) : <h4>No results matching your search {search}</h4>}
 
 
     </div>

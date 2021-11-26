@@ -29,7 +29,9 @@ div,nav,header,.nav-link ,.nav-links {
 header {
   display: flex;
   height:10vh;
+  width:100vw;
   align-items: center;
+  justify-content: space-around;
 }
 
 .logo-container {
@@ -45,13 +47,13 @@ header {
 
 nav {
   display: flex;
-  flex:1;
+  flex:2;
   justify-content: center;
 
 }
 .selected-nav-item {
   font-weight: bold;
-  color: cornflowerblue;
+  color: rgb(49, 103, 204);
 }
 .nav-links {
   list-style: none;
@@ -80,7 +82,7 @@ nav {
 .search-form {
   align-self: center;
   margin: 10px;
-
+  padding:10px;
 }
 
 .search-form input {
@@ -88,12 +90,13 @@ nav {
   background-color: whitesmoke;
   border-radius: 10px;
   border: 1px solid grey;
-  width: 400px;
+  width: 40vw;
   align-content: center;
   padding: 3px;
   font-size: 15px;
   margin: 5px;
   color: #5f5f79;
+  
 }
 .search-form button {
   height:50px;
@@ -104,14 +107,33 @@ nav {
   padding: 5px;
   font-size: 15px;
 }
+.options-container{
+  border: 1px solid red;
+}
+.checkbox-is-veg{
+  border: 1px solid red;
+}
+.result-helptext-mobile {
+  display: none;
+  color: #5f5f79;
+}
 
 .nav-button {
     display: none;
+    flex:1
 }
 
-@media screen and (max-width:600px){
+.nav-button img{
+  width:30px;
+  height:30px;
+}
+
+@media screen and (max-width:800px){
   .how-to {
     display: none;
+  }
+  .result-helptext-mobile {
+    display: inline-block;
   }
   .recipeContainer {
     display: flex;
@@ -126,10 +148,18 @@ nav {
     display: flex;
   
   }
+  .search-form  input{
+  width: 80vw;
+  margin: 5vw;;
+  
+  }
   nav{
     display: none;
   }
   .nav-button {
     display: flex;
+  }
+  .logo-container{
+    flex:4
   }
 }
